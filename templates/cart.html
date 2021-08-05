@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Melon Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for melon in melon_list %}
+            <tr>
+            <td>{{ melon.name }}</td>
+            <td>{{ melon.quantity }}</td>
+            <td>${{ melon.price }}0</td>
+            <td>${{ melon.total }}0</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>${{total_cost}}0</h3>
+
+    <a href="/checkout" class="btn btn-large btn-primary">Check Out</a>
+    <a href="/empty" class="btn btn-large btn-primary">Empty Cart</a>
+{% endblock %}
